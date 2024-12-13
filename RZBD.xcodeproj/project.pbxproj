@@ -11,6 +11,15 @@
 		E60100612D0CA1E600C8A46A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60100602D0CA1E600C8A46A /* ContentView.swift */; };
 		E60100632D0CA1E700C8A46A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E60100622D0CA1E700C8A46A /* Assets.xcassets */; };
 		E60100662D0CA1E700C8A46A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E60100652D0CA1E700C8A46A /* Preview Assets.xcassets */; };
+		E601006D2D0CA32B00C8A46A /* Editor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E601006C2D0CA32B00C8A46A /* Editor.swift */; };
+		E60100722D0CAB6100C8A46A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60100712D0CAB6100C8A46A /* User.swift */; };
+		E60100782D0CAC0700C8A46A /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60100772D0CAC0700C8A46A /* UserViewModel.swift */; };
+		E601007A2D0CAE1700C8A46A /* EditUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60100792D0CAE1700C8A46A /* EditUserView.swift */; };
+		E601007C2D0CB13800C8A46A /* NewUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E601007B2D0CB13800C8A46A /* NewUserView.swift */; };
+		E601007E2D0CCB2400C8A46A /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = E601007D2D0CCB2400C8A46A /* Car.swift */; };
+		E60100802D0CD02700C8A46A /* CarsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E601007F2D0CD02700C8A46A /* CarsViewModel.swift */; };
+		E65BFA732D0CDF5F006B88EF /* NewCarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65BFA722D0CDF5F006B88EF /* NewCarView.swift */; };
+		E65BFA752D0CE2E9006B88EF /* AECarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65BFA742D0CE2E9006B88EF /* AECarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +28,15 @@
 		E60100602D0CA1E600C8A46A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E60100622D0CA1E700C8A46A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E60100652D0CA1E700C8A46A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E601006C2D0CA32B00C8A46A /* Editor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Editor.swift; sourceTree = "<group>"; };
+		E60100712D0CAB6100C8A46A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E60100772D0CAC0700C8A46A /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		E60100792D0CAE1700C8A46A /* EditUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserView.swift; sourceTree = "<group>"; };
+		E601007B2D0CB13800C8A46A /* NewUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserView.swift; sourceTree = "<group>"; };
+		E601007D2D0CCB2400C8A46A /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
+		E601007F2D0CD02700C8A46A /* CarsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsViewModel.swift; sourceTree = "<group>"; };
+		E65BFA722D0CDF5F006B88EF /* NewCarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCarView.swift; sourceTree = "<group>"; };
+		E65BFA742D0CE2E9006B88EF /* AECarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AECarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +69,9 @@
 		E601005D2D0CA1E600C8A46A /* RZBD */ = {
 			isa = PBXGroup;
 			children = (
+				E65BFA712D0CDDB6006B88EF /* ViewModels */,
+				E60100812D0CD08500C8A46A /* Views */,
+				E60100702D0CAB5700C8A46A /* Model */,
 				E601005E2D0CA1E600C8A46A /* RZBDApp.swift */,
 				E60100602D0CA1E600C8A46A /* ContentView.swift */,
 				E60100622D0CA1E700C8A46A /* Assets.xcassets */,
@@ -65,6 +86,36 @@
 				E60100652D0CA1E700C8A46A /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E60100702D0CAB5700C8A46A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E601006C2D0CA32B00C8A46A /* Editor.swift */,
+				E60100712D0CAB6100C8A46A /* User.swift */,
+				E601007D2D0CCB2400C8A46A /* Car.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E60100812D0CD08500C8A46A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E60100792D0CAE1700C8A46A /* EditUserView.swift */,
+				E601007B2D0CB13800C8A46A /* NewUserView.swift */,
+				E65BFA722D0CDF5F006B88EF /* NewCarView.swift */,
+				E65BFA742D0CE2E9006B88EF /* AECarView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E65BFA712D0CDDB6006B88EF /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				E601007F2D0CD02700C8A46A /* CarsViewModel.swift */,
+				E60100772D0CAC0700C8A46A /* UserViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +188,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E601007C2D0CB13800C8A46A /* NewUserView.swift in Sources */,
+				E60100782D0CAC0700C8A46A /* UserViewModel.swift in Sources */,
+				E65BFA732D0CDF5F006B88EF /* NewCarView.swift in Sources */,
 				E60100612D0CA1E600C8A46A /* ContentView.swift in Sources */,
 				E601005F2D0CA1E600C8A46A /* RZBDApp.swift in Sources */,
+				E60100802D0CD02700C8A46A /* CarsViewModel.swift in Sources */,
+				E601007E2D0CCB2400C8A46A /* Car.swift in Sources */,
+				E601007A2D0CAE1700C8A46A /* EditUserView.swift in Sources */,
+				E60100722D0CAB6100C8A46A /* User.swift in Sources */,
+				E601006D2D0CA32B00C8A46A /* Editor.swift in Sources */,
+				E65BFA752D0CE2E9006B88EF /* AECarView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
