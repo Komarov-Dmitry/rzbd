@@ -40,12 +40,56 @@ class APIClient: ObservableObject {
             .store(in: &cancellables)
     }
     
+    func addCar(_ ride: Ride, completion: @escaping (Result<String, Error>) -> Void) {
+        guard let url = URL(string: "http://localhost:8000/rides/") else {
+            completion(.failure(NSError(domain: "InvalidURL", code: -1, userInfo: nil)))
+            return
+        }
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        do {
+            let jsonData = try JSONEncoder().encode(ride)
+            request.httpBody = jsonData
+        } catch {
+            completion(.failure(error))
+            return
+        }
+
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+            
+            // Логирование данных, полученных от сервера
+            if let data = data, let responseString = String(data: data, encoding: .utf8) {
+                print("Response from server: \(responseString)")
+            }
+
+            guard let data = data else {
+                completion(.failure(NSError(domain: "NoData", code: -1, userInfo: nil)))
+                return
+            }
+            
+            do {
+                let responseModel = try JSONDecoder().decode(Ride.self, from: data)
+                completion(.success(String(responseModel.id)))
+            } catch {
+                print("Decoded response error: \(error.localizedDescription)")
+                completion(.failure(error))
+            }
+        }.resume()
+    }
+    
     func addData<T: Encodable>(_ data: T, to endpoint: String, completion: @escaping (Result<Data, Error>) -> Void) {
-        guard let url = URL(string: baseURL + endpoint) else {
+        guard let url = URL(string: baseURL + "/" + endpoint + "/") else {
             completion(.failure(APIError.invalidURL))
             return
         }
-        
+    
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -67,12 +111,14 @@ class APIClient: ObservableObject {
     
     func updateData<T: Encodable & Identifiable>(_ editedItem: T, at endpoint: String, id: String, completion: @escaping (Result<Data, Error>) -> Void) {
         // Сначала удаляем элемент
+        print("Deleted ID", id)
         deleteData(at: endpoint, id: id) { [weak self] result in
             switch result {
             case .failure(let error):
                 completion(.failure(error))
             case .success:
                 // Если удаление прошло успешно, добавляем новый элемент
+                print("Updated ID", editedItem.id)
                 self?.addData(editedItem, to: endpoint, completion: completion)
             }
         }
@@ -80,11 +126,13 @@ class APIClient: ObservableObject {
     
     // Универсальный метод для удаления данных
     func deleteData(at endpoint: String, id: String, completion: @escaping (Result<Void, Error>) -> Void) {
-        guard let url = URL(string: baseURL + endpoint + "/" + id) else {
+        guard let url = URL(string: baseURL + "/" + endpoint + "/" + id) else {
+            print("try url")
             completion(.failure(APIError.invalidURL))
             return
         }
         
+        print("url: ", url)
         var request = URLRequest(url: url)
         request.httpMethod = "DELETE"
         

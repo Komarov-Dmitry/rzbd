@@ -6,8 +6,10 @@
 //
 
 import Foundation
-
 struct Ride: Codable, Identifiable {
+    // Статический счётчик ID
+    private static var currentID: Int = 51
+    
     var id: Int
     var user_id: String
     var car_id: String
@@ -23,9 +25,10 @@ struct Ride: Codable, Identifiable {
         case distance
         case ride_cost
     }
-    // [{"ride_id":2,"user_id":"W94567191G","car_id":"d-1499264O","ride_duration":136,"distance":6662.7,"ride_cost":1491.0},
-    init(id: Int = UUID().hashValue, user_id: String, car_id: String, ride_duration: Int, distance: Float, ride_cost: Float) {
-        self.id = id
+    
+    // Инициализатор с автоматическим инкрементом ID
+    init(user_id: String, car_id: String, ride_duration: Int, distance: Float, ride_cost: Float) {
+        self.id = Ride.generateNextID() // Автоинкремент
         self.user_id = user_id
         self.car_id = car_id
         self.ride_duration = ride_duration
@@ -33,6 +36,9 @@ struct Ride: Codable, Identifiable {
         self.ride_cost = ride_cost
     }
     
-    
-    
+    // Генерация следующего уникального ID
+    private static func generateNextID() -> Int {
+        currentID += 1
+        return currentID
+    }
 }

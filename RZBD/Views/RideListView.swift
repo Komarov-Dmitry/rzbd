@@ -39,9 +39,10 @@ struct RideListView: View {
                                 Text("Ride cost")
                                     .foregroundColor(.gray)
                             }
-                            .onTapGesture {
-                                self.selectedRide = ride
-                            }
+                        }
+                        .onTapGesture {
+                            print("You tap on Ride")
+                            self.selectedRide = ride
                         }
                     }
                 } else {
@@ -65,9 +66,10 @@ struct RideListView: View {
                             Text("Ride cost")
                                 .foregroundColor(.gray)
                         }
-                        .onTapGesture {
-                            self.selectedRide = ride
-                        }
+                    }
+                    .onTapGesture {
+                        print("You tap on Ride")
+                        self.selectedRide = ride
                     }
                 }
             }
@@ -88,5 +90,5 @@ struct RideListView: View {
 
 #Preview {
     @Previewable var viewModel = APIClient()
-    RideListView(viewModel: viewModel, conditionFilter: "N20291135p")
+    RideListView(viewModel: viewModel)
 }

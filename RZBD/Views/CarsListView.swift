@@ -11,6 +11,8 @@ import SwiftUI
 struct CarsListView: View {
     @ObservedObject var viewModel: APIClient
     @State var selectedCar: Car?
+    @State private var showingAECarView = false
+    @State var isEdit = false
     var colors: [Color] = [.blue, .yellow, .green, .black, .gray, .brown, .cyan, .indigo, .mint, .pink, .purple]
     
     var body: some View {
@@ -24,7 +26,7 @@ struct CarsListView: View {
                             HStack(alignment: .center) {
                                 Text(car.model)
                                     .font(.headline)
-                                Text("\(car.yearToStart)")
+                                Text("\(car.yearToStart)".replacingOccurrences(of: " ", with: ""))
                                     .font(.caption)
                                     .foregroundStyle(.gray)
                             }
@@ -46,10 +48,51 @@ struct CarsListView: View {
                     }
                     .padding(.vertical, 4)
                     .onTapGesture {
+                        print("You tapped on a car")
+                        showingAECarView = true
+                        isEdit = true
                         self.selectedCar = car
                     }
+                    .swipeActions(edge: .leading) {
+                        Button(action: {
+                            let index = viewModel.cars.firstIndex(where: {$0.id == car.id})
+                            if let index = index {
+                                // increment reserve
+                                var editedCar = viewModel.cars[index]
+                                editedCar.reserve += 1
+                                print(car.id)
+                                viewModel.updateData(editedCar, at: "cars", id: car.id) { result in
+                                    switch result {
+                                    case .success:
+                                        viewModel.loadAllData()
+                                    case .failure(let error):
+                                        print("Error updating car: \(error)")
+                                    }
+                                }
+                                
+                                // add ride
+                                var newRide = Ride(user_id: "S21145976p", car_id: "kejgkqn24KM", ride_duration: 10, distance: 100, ride_cost: 100)
+                                print("NewRide ID : ", newRide.id)
+                                viewModel.addCar(newRide) { result in
+                                    switch result {
+                                    case .success:
+                                        print("Succes adding ride")
+//                                        viewModel.loadAllData()
+                                    case .failure(let error):
+                                        print("Error adding ride: \(error)")
+                                    }
+                                    
+                                }
+                            }
+                        }) {
+                            Label("", systemImage: "steeringwheel")
+                        }
+                       .tint(.purple)
+                    }
                     .swipeActions {
+                        
                         Button(role: .destructive) {
+                            print(car.id)
                             viewModel.deleteData(at: "cars", id: car.id) { result in
                                 switch result {
                                 case .success:
@@ -65,6 +108,9 @@ struct CarsListView: View {
                 }
             }
             .navigationTitle("Cars")
+            .sheet(isPresented: $showingAECarView) {
+                EditCarView(viewModel: viewModel, selectedCar: $selectedCar)
+            }
             .onAppear {
                 viewModel.fetchData(from: "cars", as: [Car].self) { result in
                     switch result {

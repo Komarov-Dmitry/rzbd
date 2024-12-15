@@ -60,7 +60,6 @@ struct UserFlowView: View {
                 .font(.largeTitle)
                 .padding()
             Text("User rating - 8.4")
-//            Spacer()
         }
     }
 }

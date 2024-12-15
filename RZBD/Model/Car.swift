@@ -31,9 +31,8 @@ struct Car: Codable, Identifiable {
         case reserve
     }
     
-    
-    init(model: String, carType: String, fuelType: String, carRating: Float, yearToStart: Int, yearToWork: Int, riders: Int, reserve: Int) {
-        self.id = UUID().uuidString
+    init(model: String, carType: String, fuelType: String, carRating: Float = 5.0, yearToStart: Int, yearToWork: Int, riders: Int = 0, reserve: Int = 0) {
+        self.id = String(UUID().uuidString.prefix(20))
         self.model = model
         self.carType = carType
         self.fuelType = fuelType

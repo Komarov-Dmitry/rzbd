@@ -3,19 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		0DF7353C2D0DC7440058D9FC /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF7353B2D0DC7440058D9FC /* APIClient.swift */; };
 		0DF7353E2D0DC7820058D9FC /* Ride.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF7353D2D0DC7820058D9FC /* Ride.swift */; };
-		0DF735402D0DCF120058D9FC /* MainVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF7353F2D0DCF120058D9FC /* MainVIew.swift */; };
 		0DF735422D0DD2B90058D9FC /* CarsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF735412D0DD2B90058D9FC /* CarsListView.swift */; };
-		0DF735442D0DD2DC0058D9FC /* UserFlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF735432D0DD2DC0058D9FC /* UserFlowView.swift */; };
 		0DF735462D0F015A0058D9FC /* RideListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF735452D0F015A0058D9FC /* RideListView.swift */; };
 		0DF735482D0F02220058D9FC /* UserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF735472D0F02220058D9FC /* UserListView.swift */; };
 		E601005F2D0CA1E600C8A46A /* RZBDApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E601005E2D0CA1E600C8A46A /* RZBDApp.swift */; };
-		E60100612D0CA1E600C8A46A /* AdminFlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60100602D0CA1E600C8A46A /* AdminFlowView.swift */; };
 		E60100632D0CA1E700C8A46A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E60100622D0CA1E700C8A46A /* Assets.xcassets */; };
 		E60100662D0CA1E700C8A46A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E60100652D0CA1E700C8A46A /* Preview Assets.xcassets */; };
 		E601006D2D0CA32B00C8A46A /* Editor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E601006C2D0CA32B00C8A46A /* Editor.swift */; };
@@ -26,20 +23,16 @@
 		E601007E2D0CCB2400C8A46A /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = E601007D2D0CCB2400C8A46A /* Car.swift */; };
 		E60100802D0CD02700C8A46A /* CarsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E601007F2D0CD02700C8A46A /* CarsViewModel.swift */; };
 		E65BFA732D0CDF5F006B88EF /* NewCarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65BFA722D0CDF5F006B88EF /* NewCarView.swift */; };
-		E65BFA752D0CE2E9006B88EF /* AECarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65BFA742D0CE2E9006B88EF /* AECarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0DF7353B2D0DC7440058D9FC /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		0DF7353D2D0DC7820058D9FC /* Ride.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ride.swift; sourceTree = "<group>"; };
-		0DF7353F2D0DCF120058D9FC /* MainVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVIew.swift; sourceTree = "<group>"; };
 		0DF735412D0DD2B90058D9FC /* CarsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsListView.swift; sourceTree = "<group>"; };
-		0DF735432D0DD2DC0058D9FC /* UserFlowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFlowView.swift; sourceTree = "<group>"; };
 		0DF735452D0F015A0058D9FC /* RideListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideListView.swift; sourceTree = "<group>"; };
 		0DF735472D0F02220058D9FC /* UserListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListView.swift; sourceTree = "<group>"; };
 		E601005B2D0CA1E600C8A46A /* RZBD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RZBD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E601005E2D0CA1E600C8A46A /* RZBDApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RZBDApp.swift; sourceTree = "<group>"; };
-		E60100602D0CA1E600C8A46A /* AdminFlowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminFlowView.swift; sourceTree = "<group>"; };
 		E60100622D0CA1E700C8A46A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E60100652D0CA1E700C8A46A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E601006C2D0CA32B00C8A46A /* Editor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Editor.swift; sourceTree = "<group>"; };
@@ -50,8 +43,12 @@
 		E601007D2D0CCB2400C8A46A /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		E601007F2D0CD02700C8A46A /* CarsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsViewModel.swift; sourceTree = "<group>"; };
 		E65BFA722D0CDF5F006B88EF /* NewCarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCarView.swift; sourceTree = "<group>"; };
-		E65BFA742D0CE2E9006B88EF /* AECarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AECarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		0DF735492D0F2E690058D9FC /* Screen */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Screen; sourceTree = "<group>"; };
+		0DF7354A2D0F33430058D9FC /* AddEditingViews */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = AddEditingViews; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		E60100582D0CA1E600C8A46A /* Frameworks */ = {
@@ -115,16 +112,14 @@
 		E60100812D0CD08500C8A46A /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				0DF7353F2D0DCF120058D9FC /* MainVIew.swift */,
+				0DF7354A2D0F33430058D9FC /* AddEditingViews */,
+				0DF735492D0F2E690058D9FC /* Screen */,
 				0DF735412D0DD2B90058D9FC /* CarsListView.swift */,
 				0DF735452D0F015A0058D9FC /* RideListView.swift */,
 				0DF735472D0F02220058D9FC /* UserListView.swift */,
 				E60100792D0CAE1700C8A46A /* EditUserView.swift */,
 				E601007B2D0CB13800C8A46A /* NewUserView.swift */,
 				E65BFA722D0CDF5F006B88EF /* NewCarView.swift */,
-				E65BFA742D0CE2E9006B88EF /* AECarView.swift */,
-				E60100602D0CA1E600C8A46A /* AdminFlowView.swift */,
-				0DF735432D0DD2DC0058D9FC /* UserFlowView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -153,6 +148,10 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				0DF735492D0F2E690058D9FC /* Screen */,
+				0DF7354A2D0F33430058D9FC /* AddEditingViews */,
 			);
 			name = RZBD;
 			productName = RZBD;
@@ -214,10 +213,8 @@
 				E601007C2D0CB13800C8A46A /* NewUserView.swift in Sources */,
 				E60100782D0CAC0700C8A46A /* UserViewModel.swift in Sources */,
 				E65BFA732D0CDF5F006B88EF /* NewCarView.swift in Sources */,
-				E60100612D0CA1E600C8A46A /* AdminFlowView.swift in Sources */,
 				0DF7353E2D0DC7820058D9FC /* Ride.swift in Sources */,
 				E601005F2D0CA1E600C8A46A /* RZBDApp.swift in Sources */,
-				0DF735402D0DCF120058D9FC /* MainVIew.swift in Sources */,
 				0DF735422D0DD2B90058D9FC /* CarsListView.swift in Sources */,
 				E60100802D0CD02700C8A46A /* CarsViewModel.swift in Sources */,
 				E601007E2D0CCB2400C8A46A /* Car.swift in Sources */,
@@ -225,8 +222,6 @@
 				E60100722D0CAB6100C8A46A /* User.swift in Sources */,
 				E601006D2D0CA32B00C8A46A /* Editor.swift in Sources */,
 				0DF735462D0F015A0058D9FC /* RideListView.swift in Sources */,
-				E65BFA752D0CE2E9006B88EF /* AECarView.swift in Sources */,
-				0DF735442D0DD2DC0058D9FC /* UserFlowView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,9 +352,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RZBD/Preview Content\"";
+				DEVELOPMENT_TEAM = 3V83G95RA5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -374,6 +371,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "-.RZBD";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -385,9 +383,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RZBD/Preview Content\"";
+				DEVELOPMENT_TEAM = 3V83G95RA5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -402,6 +402,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "-.RZBD";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
