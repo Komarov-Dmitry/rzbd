@@ -12,6 +12,7 @@ class APIClient: ObservableObject {
     @Published var users: [User] = []
     @Published var cars: [Car] = []
     @Published var rides: [Ride] = []
+
     
     private let baseURL = "http://127.0.0.1:8000"
     private var cancellables = Set<AnyCancellable>()
@@ -34,7 +35,6 @@ class APIClient: ObservableObject {
                     break
                 }
             } receiveValue: { decodedData in
-//                print("Decoded data \(decodedData)")
                 completion(.success(decodedData))
             }
             .store(in: &cancellables)

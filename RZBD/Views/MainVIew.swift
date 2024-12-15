@@ -9,32 +9,35 @@ import Foundation
 import SwiftUI
 
 struct MainView: View {
-    
-    
     var body: some View {
-        Spacer()
-        VStack {
-            Button("Login as Admin") {
-                print("Admin is log in")
+        NavigationStack {
+            Spacer()
+            VStack {
+                NavigationLink(destination: AdminFlowView()) {
+                    Text("Login as Admin")
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .frame(width: 250, height: 100)
+                        .background(Color.black)
+                        .foregroundColor(.white)
+                        .cornerRadius(15)
+                }
+
+                NavigationLink(destination: UserFlowView()) {
+                    Text("Login as User")
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .frame(width: 250, height: 100)
+                        .background(Color.black)
+                        .foregroundColor(.white)
+                        .cornerRadius(15)
+                }
             }
-            .font(.title)
-            .fontWeight(.bold)
-            .frame(width: 250, height: 100)
-            .background(Color.black)
-            .cornerRadius(15)
-            Button("Login as User") {
-                print("User is log in")
-            }
-            .font(.title)
-            .fontWeight(.bold)
-            .frame(width: 250, height: 100)
-            .background(Color.black)
-            .cornerRadius(15)
+            Spacer()
         }
-        Spacer()
     }
 }
 
-#Preview() {
+#Preview {
     MainView()
 }
