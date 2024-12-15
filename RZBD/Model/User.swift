@@ -12,7 +12,7 @@ struct User: Codable, Identifiable {
     var id: String
     var gender: Int  // 1 - male, 0 - female
     var age: Int
-    var user_rating: String
+    var user_rating: Float
     
     enum CodingKeys: String, CodingKey {
         case id = "user_id"
@@ -22,7 +22,7 @@ struct User: Codable, Identifiable {
     }
     
     // Инициализатор для генерации UUID
-    init(gender: Int, age: Int, user_rating: String) {
+    init(gender: Int, age: Int, user_rating: Float) {
         self.id = UUID().uuidString
         self.gender = gender
         self.age = age

@@ -33,34 +33,34 @@ struct NewCarView: View {
                     TextField("Riders", text: $riders)
                 }
                 .onAppear {
-                    if !isEdit, let car = viewModel.selectedCar {
-                        // Populate fields with the selected car's details
-                        model = car.model
-                        carType = car.carType
-                        fuelType = car.fuelType
-                        carRating = car.carRating
-                        yearToStart = "\(car.yearToStart)"
-                        yearToWork = "\(car.yearToWork)"
-                        riders = "\(car.riders)"
-                    }
+//                    if !isEdit, let car = viewModel.selectedCar {
+//                        // Populate fields with the selected car's details
+//                        model = car.model
+//                        carType = car.carType
+//                        fuelType = car.fuelType
+//                        carRating = car.carRating
+//                        yearToStart = "\(car.yearToStart)"
+//                        yearToWork = "\(car.yearToWork)"
+//                        riders = "\(car.riders)"
+//                    }
                 }
             }
             .navigationTitle(isEdit ? "Edit Car" : "Add New Car")
             .navigationBarItems(trailing: Button("Save") {
-                saveCar()
+//                saveCar()
             })
         }
     }
     
-    private func saveCar() {
-        guard let yearStart = Int(yearToStart), let yearWork = Int(yearToWork), let ridersCount = Int(riders) else { return }
-        if isEdit, let selectedCar = viewModel.selectedCar {
-            // Edit existing car
-            viewModel.editCar(id: selectedCar.id, model: model, carType: carType, fuelType: fuelType, carRating: carRating, yearToStart: yearStart, yearToWork: yearWork, riders: ridersCount)
-        } else {
-            // Add new car
-            viewModel.addCar(model: model, carType: carType, fuelType: fuelType, carRating: carRating, yearToStart: yearStart, yearToWork: yearWork, riders: ridersCount)
-        }
-        presentationMode.wrappedValue.dismiss()
-    }
+//    private func saveCar() {
+//        guard let yearStart = Int(yearToStart), let yearWork = Int(yearToWork), let ridersCount = Int(riders) else { return }
+//        if isEdit, let selectedCar = viewModel.selectedCar {
+//            // Edit existing car
+//            viewModel.editCar(id: selectedCar.id, model: model, carType: carType, fuelType: fuelType, carRating: carRating, yearToStart: yearStart, yearToWork: yearWork, riders: ridersCount)
+//        } else {
+//            // Add new car
+//            viewModel.addCar(model: model, carType: carType, fuelType: fuelType, carRating: carRating, yearToStart: yearStart, yearToWork: yearWork, riders: ridersCount)
+//        }
+//        presentationMode.wrappedValue.dismiss()
+//    }
 }

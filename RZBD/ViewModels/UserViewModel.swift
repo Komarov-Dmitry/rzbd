@@ -17,7 +17,6 @@ class UserViewModel: ObservableObject {
     
     // Получение всех пользователей
     func fetchUsers() {
-        print("Hello world!")
         guard let url = URL(string: "http://127.0.0.1:8000/users") else { return }
         
         URLSession.shared.dataTaskPublisher(for: url)
@@ -38,7 +37,7 @@ class UserViewModel: ObservableObject {
     }
     
     // Добавление нового пользователя
-    func addUser(gender: Int, age: Int, user_rating: String) {
+    func addUser(gender: Int, age: Int, user_rating: Float) {
         let newUser = User(gender: gender, age: age, user_rating: user_rating)
         guard let url = URL(string: "http://127.0.0.1:8000/users/") else { return }
         
@@ -64,7 +63,7 @@ class UserViewModel: ObservableObject {
     }
     
     // Редактирование пользователя
-    func editUser(id: String, gender: Int, age: Int, user_rating: String) {
+    func editUser(id: String, gender: Int, age: Int, user_rating: Float) {
         let updatedUser = User(gender: gender, age: age, user_rating: user_rating)
         guard let url = URL(string: "http://127.0.0.1:8000/users/\(id)") else { return }
         

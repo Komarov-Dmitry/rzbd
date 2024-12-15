@@ -36,7 +36,7 @@ class CarsViewModel: ObservableObject {
     }
     
     // Добавление нового автомобиля
-    func addCar(model: String, carType: String, fuelType: String, carRating: String, yearToStart: Int, yearToWork: Int, riders: Int, reserve: Int = 0) {
+    func addCar(model: String, carType: String, fuelType: String, carRating: Float, yearToStart: Int, yearToWork: Int, riders: Int, reserve: Int = 0) {
         let newCar = Car(model: model, carType: carType, fuelType: fuelType, carRating: carRating, yearToStart: yearToStart, yearToWork: yearToWork, riders: riders, reserve: reserve)
         guard let url = URL(string: "http://127.0.0.1:8000/cars/") else { return }
         
@@ -62,7 +62,7 @@ class CarsViewModel: ObservableObject {
     }
     
     // Редактирование автомобиля
-    func editCar(id: String, model: String, carType: String, fuelType: String, carRating: String, yearToStart: Int, yearToWork: Int, riders: Int, reserve: Int) {
+    func editCar(id: String, model: String, carType: String, fuelType: String, carRating: Float, yearToStart: Int, yearToWork: Int, riders: Int, reserve: Int) {
         let updatedCar = Car(model: model, carType: carType, fuelType: fuelType, carRating: carRating, yearToStart: yearToStart, yearToWork: yearToWork, riders: riders, reserve: reserve)
         guard let url = URL(string: "http://127.0.0.1:8000/cars/\(id)") else { return }
         

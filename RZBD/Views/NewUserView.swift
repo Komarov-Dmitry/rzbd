@@ -15,7 +15,7 @@ struct NewUserView: View {
     @Environment(\.presentationMode) var presentationMode
     @State private var gender = 1
     @State private var age = ""
-    @State private var user_rating = ""
+    @State private var user_rating: Float = 0.0
 
     var body: some View {
         NavigationView {
@@ -26,7 +26,8 @@ struct NewUserView: View {
                         Text("Female").tag(0)
                     }
                     TextField("Age", text: $age)
-                    TextField("Rating", text: $user_rating)
+                    TextField("Rating", value: $user_rating, formatter: NumberFormatter())
+//                    TextField("Rating", text: $user_rating, formatter: NumberFormatter())
                 }
             }
             .navigationTitle("Add New User")

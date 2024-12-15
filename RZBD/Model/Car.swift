@@ -13,7 +13,7 @@ struct Car: Codable, Identifiable {
     var model: String
     var carType: String
     var fuelType: String
-    var carRating: String
+    var carRating: Float
     var yearToStart: Int
     var yearToWork: Int
     var riders: Int
@@ -32,7 +32,7 @@ struct Car: Codable, Identifiable {
     }
     
     
-    init(model: String, carType: String, fuelType: String, carRating: String, yearToStart: Int, yearToWork: Int, riders: Int, reserve: Int) {
+    init(model: String, carType: String, fuelType: String, carRating: Float, yearToStart: Int, yearToWork: Int, riders: Int, reserve: Int) {
         self.id = UUID().uuidString
         self.model = model
         self.carType = carType
