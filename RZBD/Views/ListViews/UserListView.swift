@@ -12,6 +12,7 @@ struct UserListView: View {
     
     @ObservedObject var viewModel: APIClient
     @State var selectedUser: User?
+    @State private var isShowEditUserView = false
     
     var body: some View {
         NavigationStack {
@@ -34,7 +35,7 @@ struct UserListView: View {
 
                 }
                 .onTapGesture {
-                    print(user.user_rating, user.gender)
+                    isShowEditUserView = true
                     self.selectedUser = user
                 }
                 .swipeActions {
@@ -54,6 +55,9 @@ struct UserListView: View {
                 }
             }
             .navigationTitle("Users")
+            .sheet(isPresented: $isShowEditUserView) {
+                EditUserView(viewModel: viewModel, selectedUser: $selectedUser)
+            }
             .onAppear {
                 viewModel.fetchData(from: "users", as: [User].self) { result in
                     switch result {

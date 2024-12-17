@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Charts
 
 struct AdminFlowView: View {
     @State private var selectedTab = 0
@@ -13,7 +14,7 @@ struct AdminFlowView: View {
     @ObservedObject var viewModel = APIClient()
 
     @State private var showingAddCarView = false
-    @State private var showingAEUView = false
+    @State private var showingAddUserView = false
     @State var isEdit = false
 
     @State private var selectedUser: User?
@@ -53,11 +54,12 @@ struct AdminFlowView: View {
                     Text("Rides")
                 }
                 .tag(2)
-            AnalyticsView
+            UserRatingPieChartView(users: viewModel.users)
                 .tabItem {
                     Image(systemName: "chart.xyaxis.line")
                     Text("Analtics")
                 }
+                .tag(3)
         }
         .safeAreaInset(edge: .bottom) {
             HStack {
@@ -65,7 +67,7 @@ struct AdminFlowView: View {
                 Button(action: {
                     if selectedTab == 0 {
                         print("Add user")
-//                        showingAEUserView = true
+                        showingAddUserView = true
                     } else if selectedTab == 1 {
                         print("Add car")
                         showingAddCarView = true
@@ -85,15 +87,17 @@ struct AdminFlowView: View {
         .sheet(isPresented: $showingAddCarView) {
             AddCarView(viewModel: viewModel)
         }
+        .sheet(isPresented: $showingAddUserView) {
+            AddUserView(viewModel: viewModel)
+        }
     }
-
-
+    
     var AnalyticsView: some View {
         VStack {
             Text("Analytics Page")
                 .font(.largeTitle)
                 .padding()
-            Spacer()
+//            pieChartView
         }
     }
 }

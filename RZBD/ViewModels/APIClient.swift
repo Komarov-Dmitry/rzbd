@@ -40,6 +40,49 @@ class APIClient: ObservableObject {
             .store(in: &cancellables)
     }
     
+    func sendRideData(_ rideDict: Ride) {
+        
+        if let data = try? JSONEncoder().encode(rideDict),
+           var dict = try? JSONSerialization.jsonObject(with: data) as? [String: Any]  {
+            
+            
+            guard let url = URL(string: "https://example.com/api/rides") else {
+                print("Некорректный URL")
+                return
+            }
+            
+            dict.removeValue(forKey: "ride_id")
+            
+            guard let jsonData = try? JSONSerialization.data(withJSONObject: rideDict, options: []) else {
+                print("Ошибка сериализации JSON")
+                return
+            }
+            
+            var request = URLRequest(url: url)
+            request.httpMethod = "POST"
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.httpBody = jsonData
+            
+            let task = URLSession.shared.dataTask(with: request) { data, response, error in
+                if let error = error {
+                    print("Ошибка запроса: \(error)")
+                    return
+                }
+                
+                if let response = response as? HTTPURLResponse {
+                    print("Код ответа: \(response.statusCode)")
+                }
+                
+                if let data = data, let responseBody = String(data: data, encoding: .utf8) {
+                    print("Ответ от сервера: \(responseBody)")
+                }
+            }
+            
+            
+            task.resume()
+        }
+    }
+    
     func addCar(_ ride: Ride, completion: @escaping (Result<String, Error>) -> Void) {
         guard let url = URL(string: "http://localhost:8000/rides/") else {
             completion(.failure(NSError(domain: "InvalidURL", code: -1, userInfo: nil)))
@@ -84,6 +127,7 @@ class APIClient: ObservableObject {
         }.resume()
     }
     
+    
     func addData<T: Encodable>(_ data: T, to endpoint: String, completion: @escaping (Result<Data, Error>) -> Void) {
         guard let url = URL(string: baseURL + "/" + endpoint + "/") else {
             completion(.failure(APIError.invalidURL))
@@ -109,19 +153,41 @@ class APIClient: ObservableObject {
         }
     }
     
-    func updateData<T: Encodable & Identifiable>(_ editedItem: T, at endpoint: String, id: String, completion: @escaping (Result<Data, Error>) -> Void) {
-        // Сначала удаляем элемент
-        print("Deleted ID", id)
-        deleteData(at: endpoint, id: id) { [weak self] result in
-            switch result {
-            case .failure(let error):
-                completion(.failure(error))
-            case .success:
-                // Если удаление прошло успешно, добавляем новый элемент
-                print("Updated ID", editedItem.id)
-                self?.addData(editedItem, to: endpoint, completion: completion)
-            }
+    func updateEntity<T: Encodable>(_ editedItem: T, at endpoint: String, id: String, completion: @escaping (Result<String, Error>) -> Void) {
+        guard let url = URL(string: baseURL + "/" + endpoint + "/" + id) else {
+            completion(.failure(NSError(domain: "Invalid URL", code: -1, userInfo: nil)))
+            return
         }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "PUT"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        do {
+            let jsonData = try JSONEncoder().encode(editedItem)
+            request.httpBody = jsonData
+        } catch {
+            completion(.failure(error))
+            return
+        }
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+            
+            guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+                completion(.failure(NSError(domain: "Server Error", code: -2, userInfo: nil)))
+                return
+            }
+            
+            if let data = data, let responseString = String(data: data, encoding: .utf8) {
+                completion(.success(responseString))
+            } else {
+                completion(.failure(NSError(domain: "No Data", code: -3, userInfo: nil)))
+            }
+        }.resume()
     }
     
     // Универсальный метод для удаления данных

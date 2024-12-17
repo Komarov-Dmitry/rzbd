@@ -10,6 +10,9 @@ import SwiftUI
 
 
 struct UserFlowView: View {
+    
+    let user: User
+    
     @State private var selectedTab = 0
     @State private var selectedTable = 0
 
@@ -26,14 +29,14 @@ struct UserFlowView: View {
         TabView(selection: $selectedTab) {
           
 
-            CarsListView(viewModel: viewModel)
+            CarsListView(viewModel: viewModel, user: user)
                 .tabItem {
                     Image(systemName: "car")
                     Text("Cars")
                 }
                 .tag(0)
 
-            RideListView(viewModel: viewModel, conditionFilter: "S21145976p")
+            RideListView(viewModel: viewModel, conditionFilter: user.id)
                 .tabItem {
                     Image(systemName: "fuelpump")
                     Text("Rides")
@@ -59,11 +62,13 @@ struct UserFlowView: View {
             Text("User Information")
                 .font(.largeTitle)
                 .padding()
-            Text("User rating - 8.4")
+            Text("User rating - \(user.user_rating)")
+            Text("User age - \(user.age)")
         }
     }
 }
 
-#Preview {
-    UserFlowView()
-}
+//#Preview {
+//    let newUser = User(gender: 1, age: 23, user_rating: 5.0)
+//    UserFlowView(id: newUser.id)
+//}

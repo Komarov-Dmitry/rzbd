@@ -52,7 +52,7 @@ struct EditCarView: View {
             .navigationBarItems(trailing: Button("Save changes") {
                 var editedCar = Car(model: model, carType: carType, fuelType: fuelType, carRating: Float(carRating) ?? 5.0,  yearToStart: Int(yearToStart) ?? 0, yearToWork: 0)
                 editedCar.id = id
-                viewModel.updateData(editedCar, at: "cars", id: editedCar.id) { result in
+                viewModel.updateEntity(editedCar, at: "cars", id: editedCar.id) { result in
                     switch result {
                     case .success:
                         print("Updated")

@@ -10,7 +10,7 @@ import Foundation
 struct User: Codable, Identifiable {
     
     var id: String
-    var gender: Int  // 1 - male, 0 - female
+    var gender: Int
     var age: Int
     var user_rating: Float
     
@@ -23,7 +23,7 @@ struct User: Codable, Identifiable {
     
     // Инициализатор для генерации UUID
     init(gender: Int, age: Int, user_rating: Float) {
-        self.id = UUID().uuidString
+        self.id = String(UUID().uuidString.prefix(20))
         self.gender = gender
         self.age = age
         self.user_rating = user_rating

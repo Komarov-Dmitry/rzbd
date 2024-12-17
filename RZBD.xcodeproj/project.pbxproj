@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0DF5769A2D1001800078AF1C /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 0DF576992D1001800078AF1C /* Charts */; };
+		0DF5769F2D109DD80078AF1C /* .swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF5769E2D109DD80078AF1C /* .swift */; };
 		0DF7353C2D0DC7440058D9FC /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF7353B2D0DC7440058D9FC /* APIClient.swift */; };
 		0DF7353E2D0DC7820058D9FC /* Ride.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF7353D2D0DC7820058D9FC /* Ride.swift */; };
 		0DF735422D0DD2B90058D9FC /* CarsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF735412D0DD2B90058D9FC /* CarsListView.swift */; };
@@ -17,15 +19,11 @@
 		E60100662D0CA1E700C8A46A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E60100652D0CA1E700C8A46A /* Preview Assets.xcassets */; };
 		E601006D2D0CA32B00C8A46A /* Editor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E601006C2D0CA32B00C8A46A /* Editor.swift */; };
 		E60100722D0CAB6100C8A46A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60100712D0CAB6100C8A46A /* User.swift */; };
-		E60100782D0CAC0700C8A46A /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60100772D0CAC0700C8A46A /* UserViewModel.swift */; };
-		E601007A2D0CAE1700C8A46A /* EditUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60100792D0CAE1700C8A46A /* EditUserView.swift */; };
-		E601007C2D0CB13800C8A46A /* NewUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E601007B2D0CB13800C8A46A /* NewUserView.swift */; };
 		E601007E2D0CCB2400C8A46A /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = E601007D2D0CCB2400C8A46A /* Car.swift */; };
-		E60100802D0CD02700C8A46A /* CarsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E601007F2D0CD02700C8A46A /* CarsViewModel.swift */; };
-		E65BFA732D0CDF5F006B88EF /* NewCarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65BFA722D0CDF5F006B88EF /* NewCarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0DF5769E2D109DD80078AF1C /* .swift */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swift; sourceTree = "<group>"; };
 		0DF7353B2D0DC7440058D9FC /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		0DF7353D2D0DC7820058D9FC /* Ride.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ride.swift; sourceTree = "<group>"; };
 		0DF735412D0DD2B90058D9FC /* CarsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsListView.swift; sourceTree = "<group>"; };
@@ -37,12 +35,7 @@
 		E60100652D0CA1E700C8A46A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E601006C2D0CA32B00C8A46A /* Editor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Editor.swift; sourceTree = "<group>"; };
 		E60100712D0CAB6100C8A46A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		E60100772D0CAC0700C8A46A /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
-		E60100792D0CAE1700C8A46A /* EditUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserView.swift; sourceTree = "<group>"; };
-		E601007B2D0CB13800C8A46A /* NewUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserView.swift; sourceTree = "<group>"; };
 		E601007D2D0CCB2400C8A46A /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
-		E601007F2D0CD02700C8A46A /* CarsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsViewModel.swift; sourceTree = "<group>"; };
-		E65BFA722D0CDF5F006B88EF /* NewCarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -55,12 +48,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DF5769A2D1001800078AF1C /* Charts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0DF5769D2D108CA20078AF1C /* ListViews */ = {
+			isa = PBXGroup;
+			children = (
+				0DF735412D0DD2B90058D9FC /* CarsListView.swift */,
+				0DF735452D0F015A0058D9FC /* RideListView.swift */,
+				0DF735472D0F02220058D9FC /* UserListView.swift */,
+			);
+			path = ListViews;
+			sourceTree = "<group>";
+		};
 		E60100522D0CA1E600C8A46A = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +109,7 @@
 				E60100712D0CAB6100C8A46A /* User.swift */,
 				E601007D2D0CCB2400C8A46A /* Car.swift */,
 				0DF7353D2D0DC7820058D9FC /* Ride.swift */,
+				0DF5769E2D109DD80078AF1C /* .swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -112,14 +117,9 @@
 		E60100812D0CD08500C8A46A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0DF5769D2D108CA20078AF1C /* ListViews */,
 				0DF7354A2D0F33430058D9FC /* AddEditingViews */,
 				0DF735492D0F2E690058D9FC /* Screen */,
-				0DF735412D0DD2B90058D9FC /* CarsListView.swift */,
-				0DF735452D0F015A0058D9FC /* RideListView.swift */,
-				0DF735472D0F02220058D9FC /* UserListView.swift */,
-				E60100792D0CAE1700C8A46A /* EditUserView.swift */,
-				E601007B2D0CB13800C8A46A /* NewUserView.swift */,
-				E65BFA722D0CDF5F006B88EF /* NewCarView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -127,8 +127,6 @@
 		E65BFA712D0CDDB6006B88EF /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				E601007F2D0CD02700C8A46A /* CarsViewModel.swift */,
-				E60100772D0CAC0700C8A46A /* UserViewModel.swift */,
 				0DF7353B2D0DC7440058D9FC /* APIClient.swift */,
 			);
 			path = ViewModels;
@@ -182,6 +180,9 @@
 				Base,
 			);
 			mainGroup = E60100522D0CA1E600C8A46A;
+			packageReferences = (
+				0DF576982D1001800078AF1C /* XCRemoteSwiftPackageReference "swiftui-charts" */,
+			);
 			productRefGroup = E601005C2D0CA1E600C8A46A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -210,15 +211,11 @@
 			files = (
 				0DF7353C2D0DC7440058D9FC /* APIClient.swift in Sources */,
 				0DF735482D0F02220058D9FC /* UserListView.swift in Sources */,
-				E601007C2D0CB13800C8A46A /* NewUserView.swift in Sources */,
-				E60100782D0CAC0700C8A46A /* UserViewModel.swift in Sources */,
-				E65BFA732D0CDF5F006B88EF /* NewCarView.swift in Sources */,
 				0DF7353E2D0DC7820058D9FC /* Ride.swift in Sources */,
 				E601005F2D0CA1E600C8A46A /* RZBDApp.swift in Sources */,
 				0DF735422D0DD2B90058D9FC /* CarsListView.swift in Sources */,
-				E60100802D0CD02700C8A46A /* CarsViewModel.swift in Sources */,
 				E601007E2D0CCB2400C8A46A /* Car.swift in Sources */,
-				E601007A2D0CAE1700C8A46A /* EditUserView.swift in Sources */,
+				0DF5769F2D109DD80078AF1C /* .swift in Sources */,
 				E60100722D0CAB6100C8A46A /* User.swift in Sources */,
 				E601006D2D0CA32B00C8A46A /* Editor.swift in Sources */,
 				0DF735462D0F015A0058D9FC /* RideListView.swift in Sources */,
@@ -431,6 +428,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0DF576982D1001800078AF1C /* XCRemoteSwiftPackageReference "swiftui-charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/spacenation/swiftui-charts.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0DF576992D1001800078AF1C /* Charts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0DF576982D1001800078AF1C /* XCRemoteSwiftPackageReference "swiftui-charts" */;
+			productName = Charts;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E60100532D0CA1E600C8A46A /* Project object */;
 }
